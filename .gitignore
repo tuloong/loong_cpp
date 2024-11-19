@@ -26,3 +26,46 @@ Makefile
 
 # Ignore dependency directories
 _deps/
+
+# Ignore additional build directories
+bin/
+lib/
+dist/
+
+# Ignore additional CMake files
+CMakeScripts/
+Testing/
+test/
+
+# Ignore additional compiled object files
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# Ignore additional temporary files
+*.pid
+*.seed
+*.swo
+*.swn
+*.orig
+
+# Ignore IDE specific files
+.idea/
+*.iml
+
+# Ignore coverage and profiling files
+*.gcda
+*.gcno
+*.gcov
+*.prof
+*.profraw
+
+# Ignore backup files
+*.bak
+*.old
+*.backup
+
+# Ignore Python virtual environment
+venv/
