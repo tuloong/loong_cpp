@@ -1,0 +1,5 @@
+if(EXISTS "/cygdrive/c/Users/volo/Documents/GitHub/awesome_cpp/test_main[1]_tests.cmake")
+  include("/cygdrive/c/Users/volo/Documents/GitHub/awesome_cpp/test_main[1]_tests.cmake")
+else()
+  add_test(test_main_NOT_BUILT test_main_NOT_BUILT)
+endif()
