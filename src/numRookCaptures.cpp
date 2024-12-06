@@ -54,5 +54,55 @@ using namespace std;
 
 int numRookCaptures(vector<vector<char>> &board)
 {
-    
+    // find the position of the white rook
+    int rookRow = -1;
+    int rookCol = -1;
+
+    for (int i = 0; i < 8; ++i)
+    {
+        for (int j = 0; j < 8; ++j)
+        {
+            if (board[i][j] == 'R')
+            {
+                rookRow = i;
+                rookCol = j;
+                break;
+            }
+        }
+        if (rookRow != -1)
+        {
+            break;
+        }
+    }
+
+    // define the directions: up, down, left, right
+    vector<pair<int, int>> directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+    int captures = 0;
+
+    // check the four directions
+    for (auto &dir : directions)
+    {
+        int dr = dir.first;
+        int dc = dir.second;
+        int r = rookRow + dr;
+        int c = rookCol + dc;
+
+        while (r >= 0 && r < 8 && c >= 0 && c < 8)
+        {
+            if (board[r][c] == 'B')
+            {
+                break;
+            }
+            if (board[r][c] == 'p')
+            {
+                captures++;
+                break;
+            }
+            r += dr;
+            c += dc;
+        }
+    }
+
+    return captures;
 }
